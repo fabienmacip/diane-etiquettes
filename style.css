@@ -1,0 +1,29 @@
+.aumoinsun {
+  font-weight: bold;
+}
+
+.listeDesSpes {
+  font-weight: 500;
+}
+
+.img-petit {
+  width: 30px;
+}
+
+.sous-carte {
+  background-color:rgb(224, 224, 224);
+}
+
+.agent-bonne-specialite {
+  color: blue;
+}
+
+.inactif {
+  background-color: grey !important;
+  border: 0;
+}
+
+.plus-minus-circle {
+  width: 2rem;
+  
+}
