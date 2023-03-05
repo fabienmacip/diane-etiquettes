@@ -29,11 +29,29 @@
 }
 
 /* ****************** ETIQUETTES ************************** */
+
+#tableEtiquettes, #tableEtiquettes span, #tableEtiquettes br, #tableEtiquettes td, #tableEtiquettes tr{
+  margin: 0;
+  padding: 0;
+}
+
+/* .marg0, .pad0{
+  margin: 0;
+  padding: 0;
+}
+
+br{
+  margin: 0;
+  padding: 0;
+}
+ */
 #tableEtiquettes{
   font-weight: 700;
   text-align: center;
   width: 100%;
-  }
+  font-family: verdana, arial;
+  border-collapse: unset;
+}
   
   #tableEtiquettes tr{
   
@@ -46,7 +64,7 @@
   
   }
   
-  #printbutton, et-button{
+  #printbutton, #et-button{
       width: 100px;
       margin: 1rem auto 1rem auto;
       background-color: rgba(38,174,144,1);
@@ -67,7 +85,7 @@
       transition-duration: 0.4s;
   }
   
-  #printbutton:hover, et-button:hover {
+  #printbutton:hover, #et-button:hover {
       background-color: #F0F0F0;
       color: black;
       width: 110px;
@@ -130,7 +148,7 @@
   }
 
 
-  .et-button, nav, header, footer{
+  button, nav, header, footer{
     display: none;
   }
 

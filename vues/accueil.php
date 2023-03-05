@@ -1,7 +1,7 @@
 <?php
 $titre = 'Accueil';
 
-$diane = "<span class='diane'>DIANE LESPIGNANAISE</span>";
+$diane = "<div class='et-diane'>DIANE LESPIGNANAISE</div>";
 
 
 
@@ -29,8 +29,20 @@ ob_start();
         <?php foreach ($animals as $animal): ?>
           <?php foreach ($dates as $date): ?>
 
-            <tr><td><?= $diane ?><br/><span class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></span><br/><?= $animal->getNom() ?><br/><?= $date->getDateLong() ?></td>
-            <td><?= $diane ?><br/><span class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></span><br/><?= $animal->getNom() ?><br/><?= $date->getDateLong() ?></td></tr>
+            <tr>
+              <td>
+                <?= $diane ?>
+                <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                <div class='et-animal'><?= $animal->getNom() ?></div>
+                <div class='et-date'><?= $date->getDateLong() ?></div>
+              </td>
+              <td>
+                <?= $diane ?>
+                <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                <div class='et-animal'><?= $animal->getNom() ?></div>
+                <div class='et-date'><?= $date->getDateLong() ?></div>
+              </td>
+            </tr>
             
           <?php endforeach; ?>
         <?php endforeach; ?>

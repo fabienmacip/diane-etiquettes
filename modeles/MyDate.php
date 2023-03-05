@@ -37,36 +37,80 @@ class MyDate
     private function jourSemaine($jour){
         switch($jour) {
             case 0:
-                return "Dimanche";
+                return "dimanche";
                 break;
             case 1:
-                return "Lundi";
+                return "lundi";
                 break;
             case 2:
-                return "Mardi";
+                return "mardi";
                 break;
             case 3:
-                return "Mercredi";
+                return "mercredi";
                 break;
             case 4:
-                return "Jeudi";
+                return "jeudi";
                 break;
             case 5:
-                return "Vendredi";
+                return "vendredi";
                 break;
             case 6:
-                return "Samedi";
+                return "samedi";
                 break;
             default:
                 return "";
         }
     }
 
+    private function moisLettres($mois) {
+        switch($mois) {
+            case "01":
+                return "janvier";
+                break;
+            case "02":
+                return "février";
+                break;
+            case "03":
+                return "mars";
+                break;
+            case "04":
+                return "avril";
+                break;
+            case "05":
+                return "mai";
+                break;
+            case "06":
+                return "juin";
+                break;
+            case "07":
+                return "juillet";
+                break;
+            case "08":
+                return "août";
+                break;
+            case "09":
+                return "septembre";
+                break;
+            case "10":
+                return "octobre";
+                break;
+            case "11":
+                return "novembre";
+                break;
+            case "12":
+                return "décembre";
+                break;                
+
+            default:
+                return "";
+        }       
+    }
+
     public function getDateLong()
     {
         $dt = DateTime::createFromFormat('Y-m-d', $this->date);
         $jour = $dt->format('d');
-        $mois = $dt->format('m');
+        $mois = $this->moisLettres($dt->format('m'));
         $an = $dt->format('Y');
         $jourSemaine = $this->jourSemaine($dt->format('w'));
 
