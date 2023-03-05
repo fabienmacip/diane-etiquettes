@@ -104,7 +104,22 @@ let pageMission ='';
 
 }) // FIN DU document.READY
 
-//  ##############  MISSION - 2  ###################
+//  ##############  Impression étiquettes  ###################
+window.addEventListener('beforeprint', (event) => {
+  let body = document.getElementById("body");
+  let savebody = document.getElementById("body").innerHTML;
+  let tableau = document.getElementById("tableEtiquettes");
+  body.replaceChildren(tableau);
+  window.addEventListener('afterprint', (event) => {
+    body.innerHTML = savebody;
+   
+  });
+});
+
+
+function handleClickPrint(){
+  return window.print();
+}
 
 
 // ##############  PAYS/CHASSEUR  ###################

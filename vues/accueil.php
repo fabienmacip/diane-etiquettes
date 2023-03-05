@@ -1,5 +1,12 @@
 <?php
 $titre = 'Accueil';
+
+$diane = "<span class='diane'>DIANE LESPIGNANAISE</span>";
+
+
+
+
+
 ob_start();
 ?>
 <div class="container">
@@ -9,13 +16,28 @@ ob_start();
     <div class="col-12 col-lg-10 col-xl-8">
 
 
-    <div class="mt-2">
-        <a href="#" class="add-link">Générer ?</a>
-    </div>
 
-    <?= count($payss); ?>
-    <?= count($dates); ?>
-    <?= count($animals); ?>
+    <!-- GENERATION TABLEAU -->
+    <!-- <button type="button" name="genereliste" id="genereliste" onclick="genereListe()">Générer liste</button> -->
+    <button type="button" name="printbutton" id="printbutton" onclick="handleClickPrint()" class="inutile et-button">Imprimer</button>
+    <table id="tableEtiquettes" class="et-table">
+    <tbody>
+      <!-- Rappel : pays = chasseur -->
+      <?php foreach ($payss as $pays): ?>
+        <?php foreach ($animals as $animal): ?>
+          <?php foreach ($dates as $date): ?>
+
+            <tr><td><?= $diane ?><br/><span class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></span><br/><?= $animal->getNom() ?><br/><?= $date->getDateLong() ?></td>
+            <td><?= $diane ?><br/><span class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></span><br/><?= $animal->getNom() ?><br/><?= $date->getDateLong() ?></td></tr>
+            
+          <?php endforeach; ?>
+        <?php endforeach; ?>
+      <?php endforeach; ?>
+
+    </tbody>
+    </table>
+    <!-- FIN GENERATION TABLEAU -->
+
 
 </div>
 
