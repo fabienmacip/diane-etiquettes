@@ -13,6 +13,10 @@ ob_start();
         <a href="#" class="add-link">Générer ?</a>
     </div>
 
+    <?= count($payss); ?>
+    <?= count($dates); ?>
+    <?= count($animals); ?>
+
 </div>
 
 

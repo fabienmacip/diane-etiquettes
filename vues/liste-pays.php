@@ -63,7 +63,7 @@ ob_start();
     <div class="table-responsive">
         
         <table class="table table-striped table-bordered table-sm caption-top table-responsive-lg text-center">
-            <caption class="text-center fs-3 text-primary">Liste des chasseurs</caption>
+            <caption class="text-center fs-3 text-primary">Liste des chasseurs (<?= count($payss) ?>)</caption>
             <thead class="table-dark">
                   <tr>
                       <th width="6%">Id</th>
@@ -109,6 +109,10 @@ ob_start();
     </div>
         
 <!-- Ancien emplacement du formulaire AJOUT PAYS/CHASSEUR -->
+    <div class="mt-2">
+        <a href="#form-create-pays" class="add-link">Ajouter un chasseur</a>
+    </div>
+
     </div>
     <div class="col-0 col-lg-1 col-xl-2">
         </div>

@@ -42,8 +42,11 @@ class Controleur {
     public function accueil()
     {
         $payss = new Payss($this->pdo);
+        $payss = $payss->listerPays();
         $animals = new Animals($this->pdo);
+        $animals = $animals->listerAnimal();
         $dates = new MyDates($this->pdo);
+        $dates = $dates->listerDate();
         require_once('vues/accueil.php');
     }
     
