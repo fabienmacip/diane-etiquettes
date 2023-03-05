@@ -23,6 +23,11 @@
   border: 0;
 }
 
+.inactif-force {
+  background-color: grey !important;
+  border: 0;
+}
+
 .plus-minus-circle {
   width: 2rem;
   

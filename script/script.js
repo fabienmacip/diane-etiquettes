@@ -106,6 +106,7 @@ let pageMission ='';
 
       /* $('button').show(); */
       $('button').prop('disabled',false);
+      $('.inactif-force').prop('disabled',true);
       $('#les-admins #tr1 [type=button]').prop('disabled',true).css('background-color','grey').css('border-color','grey');
     }
     

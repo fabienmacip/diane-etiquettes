@@ -26,26 +26,54 @@ ob_start();
     <tbody>
       <!-- Rappel : pays = chasseur -->
       <?php foreach ($payss as $pays): ?>
-        <?php foreach ($animals as $animal): ?>
-          <?php foreach ($dates as $date): ?>
+        <?php
+           foreach ($animals as $animal): 
+        
+            if($animal->getNom() !== "LIEVRE") {
+              foreach ($dates as $date): ?>
+              
+              <tr>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'><?= $animal->getNom() ?></div>
+                  <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                </td>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'><?= $animal->getNom() ?></div>
+                  <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                </td>
+              </tr>
 
-            <tr>
-              <td>
-                <?= $diane ?>
-                <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
-                <div class='et-animal'><?= $animal->getNom() ?></div>
-                <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
-              </td>
-              <td>
-                <?= $diane ?>
-                <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
-                <div class='et-animal'><?= $animal->getNom() ?></div>
-                <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
-              </td>
-            </tr>
+              <?php endforeach; 
+              } elseif($animal->getNom() === "LIEVRE") {
+
+              for($i = 0 ; $i < 4 ; $i++) { ?>
+              <tr>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'>LIEVRE</div>
+                  <div class='et-date police-blanche'>X</div>
+                </td>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'>LIEVRE</div>
+                  <div class='et-date police-blanche'>X</div>
+                </td>
+              </tr>
+
+            <?php
+               }// end for
+              } // end if
+             ?>
+          
+
             
           <?php endforeach; ?>
-        <?php endforeach; ?>
       <?php endforeach; ?>
 
     </tbody>

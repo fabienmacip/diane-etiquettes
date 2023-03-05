@@ -83,14 +83,14 @@ ob_start();
                             </td>
                             <td>
                                 <!--<a href="pays.php?action=edit&id=--><?php //$pays->getId() ?><!--" class="link-secondary">-->
-                                <button type="button" id="updateAnimal<?= $animal->getId() ?>" class="updateAnimal btn-primary" 
+                                <button type="button" id="updateAnimal<?= $animal->getId() ?>" class="updateAnimal btn-primary inactif-force" 
                                     onclick=displayUpdateAnimal(<?php echo $animal->getId().",'".str_replace(" ","&nbsp;",$animal->getNom())."'" ?>)
                                     >
                                     Modifier
                                 </button>
                             </td>
                             <td>
-                                <button type="submit" class="btn-primary" onclick=confirmeSuppressionAnimal(<?php echo $animal->getId().',"'.str_replace(" ","&nbsp;",$animal->getNom()).'"' ?>)>
+                                <button type="submit" class="btn-primary inactif-force" onclick=confirmeSuppressionAnimal(<?php echo $animal->getId().',"'.str_replace(" ","&nbsp;",$animal->getNom()).'"' ?>)>
                                     Supprimer
                                 </button>
                                 </form>
