@@ -42,7 +42,7 @@ ob_start();
                 <div class="form-group mb-2">
                     <!-- <label for="nom">Nom du pays</label> -->
                     <!-- <label for="nom">Nom de famille</label> -->
-                    <input type="text" name="date" class="form-control" maxlength="50" id="date" placeholder="Saisissez la date">
+                    <input type="date" name="date" class="form-control" maxlength="50" id="date" min="2023-01-01" max="2050-12-31" placeholder="Saisissez la date">
                 </div>
                 <div class="form-group mb-2">
                 <!-- <div class="col-12 col-md-4 mt-3 mt-md-0"> -->
@@ -79,12 +79,13 @@ ob_start();
                                 <?= $date->getId() ?>
                             </td>
                             <td>
-                                <?= $date->getDate() ?>
+                                <?= $date->getDateLong() ?>
+                                <!-- strftime("%a %d %b %G",strtotime($date->getDate())) -->
                             </td>
                             <td>
                                 <!--<a href="pays.php?action=edit&id=--><?php //$pays->getId() ?><!--" class="link-secondary">-->
                                 <button type="button" id="updateDate<?= $date->getId() ?>" class="updateDate btn-primary" 
-                                    onclick=displayUpdateAnimal(<?php echo $date->getId().",'".str_replace(" ","&nbsp;",$date->getDate())."'" ?>)
+                                    onclick=displayUpdateDate(<?php echo $date->getId().",'".str_replace(" ","&nbsp;",$date->getDate())."'" ?>)
                                     >
                                     Modifier
                                 </button>

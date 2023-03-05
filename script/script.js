@@ -207,7 +207,7 @@ function displayUpdateDate(id, date){
   let updateForm = '<form method="post" action="index.php">' + 
                 '<div class="form-group row my-3">' +
                 '<div class="col-12 col-lg-6 mb-3 mb-lg-0 d-flex align-items-start">' +
-                '<label for="date"></label><input type="text" maxlength="50" name="date" value="'+ date + '" id="date" placeholder="'+ date + '" class="form-control">' +
+                '<label for="date"></label><input type="date" maxlength="50" name="date" value="'+ date + '" id="date" min="2023-01-01" max="2050-12-31" placeholder="'+ date + '" class="form-control">' +
                 '</div>' +
                 '<div class="col-12 col-lg-6 d-flex justify-content-around align-items-start mt-2"><input type="hidden" name="idDateToUpdate" id="idDateToUpdate" value="' + id + '">' +
                 '<input type="hidden" name="action" id="action" value="updateDate">' +

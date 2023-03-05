@@ -37,6 +37,16 @@ class Controleur {
         }
     }
 
+    // ACCUEIL
+
+    public function accueil()
+    {
+        $payss = new Payss($this->pdo);
+        $animals = new Animals($this->pdo);
+        $dates = new MyDates($this->pdo);
+        require_once('vues/accueil.php');
+    }
+    
     // PAYS - CRUD
 
     public function listerPays()

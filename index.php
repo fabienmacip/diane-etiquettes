@@ -123,6 +123,6 @@ elseif (isset($_POST['page']) && 'administrateurs' === $_POST['page'] && isset($
     $controleur->listerAdministrateurs();
 }
 else {
-    $controleur->listerPays();
+    $controleur->accueil();
 }
 

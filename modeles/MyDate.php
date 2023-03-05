@@ -34,4 +34,46 @@ class MyDate
         return $this->date;
     }
 
+    private function jourSemaine($jour){
+        switch($jour) {
+            case 0:
+                return "Dimanche";
+                break;
+            case 1:
+                return "Lundi";
+                break;
+            case 2:
+                return "Mardi";
+                break;
+            case 3:
+                return "Mercredi";
+                break;
+            case 4:
+                return "Jeudi";
+                break;
+            case 5:
+                return "Vendredi";
+                break;
+            case 6:
+                return "Samedi";
+                break;
+            default:
+                return "";
+        }
+    }
+
+    public function getDateLong()
+    {
+        $dt = DateTime::createFromFormat('Y-m-d', $this->date);
+        $jour = $dt->format('d');
+        $mois = $dt->format('m');
+        $an = $dt->format('Y');
+        $jourSemaine = $this->jourSemaine($dt->format('w'));
+
+        $dateLong = $jourSemaine." ".$jour." ".$mois." ".$an;
+
+        return $dateLong;
+    }
+
+
 }
