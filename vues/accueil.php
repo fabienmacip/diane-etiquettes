@@ -34,13 +34,13 @@ ob_start();
                 <?= $diane ?>
                 <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
                 <div class='et-animal'><?= $animal->getNom() ?></div>
-                <div class='et-date'><?= $date->getDateLong() ?></div>
+                <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
               </td>
               <td>
                 <?= $diane ?>
                 <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
                 <div class='et-animal'><?= $animal->getNom() ?></div>
-                <div class='et-date'><?= $date->getDateLong() ?></div>
+                <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
               </td>
             </tr>
             

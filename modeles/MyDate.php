@@ -106,17 +106,17 @@ class MyDate
         }       
     }
 
-    public function getDateLong()
+    public function getDateLong($actif = 3)
     {
-        $dt = DateTime::createFromFormat('Y-m-d', $this->date);
-        $jour = $dt->format('d');
-        $mois = $this->moisLettres($dt->format('m'));
-        $an = $dt->format('Y');
-        $jourSemaine = $this->jourSemaine($dt->format('w'));
-
-        $dateLong = $jourSemaine." ".$jour." ".$mois." ".$an;
-
-        return $dateLong;
+            $dt = DateTime::createFromFormat('Y-m-d', $this->date);
+            $jour = $dt->format('d');
+            $mois = $this->moisLettres($dt->format('m'));
+            $an = $dt->format('Y');
+            $jourSemaine = $this->jourSemaine($dt->format('w'));
+    
+            $dateLong = $jourSemaine." ".$jour." ".$mois." ".$an;
+    
+            return $dateLong;
     }
 
 

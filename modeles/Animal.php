@@ -34,4 +34,14 @@ class Animal
         return $this->nom;
     }
 
+    public function getActif()
+    {
+        return $this->actif;
+    }
+
+    public function getPolice() {
+        return $this->actif == 0 ? "police-blanche" : "";
+    }
+
+
 }

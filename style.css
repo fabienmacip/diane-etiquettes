@@ -53,6 +53,11 @@ br{
   border-collapse: unset;
 }
   
+.police-blanche{
+  color: rgba(255,255,255,1);
+  opacity: 0;
+}
+
   #tableEtiquettes tr{
   
   }
