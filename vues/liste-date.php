@@ -64,7 +64,7 @@ ob_start();
             <caption class="text-center fs-3 text-primary">Liste des dates</caption>
             <thead class="table-dark">
                   <tr>
-                      <th width="10%">Id</th>
+                      <th width="10%">N°</th>
                       <th width="50%">Date</th>
                       <th width="20%"></th>
                       <th width="20%"></th>
@@ -73,10 +73,14 @@ ob_start();
               
                 <tbody>
                     
-                    <?php foreach ($dates as $date): ?>
+                    <?php
+                     $cpt1 = 0;
+                     foreach ($dates as $date): 
+                     $cpt1++;
+                    ?>
                         <tr id="tr<?= $date->getId() ?>">
                             <td>
-                                <?= $date->getId() ?>
+                                <?= $cpt1 ?>
                             </td>
                             <td>
                                 <?= $date->getDateLong() ?>

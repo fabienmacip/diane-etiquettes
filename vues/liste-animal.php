@@ -64,7 +64,7 @@ ob_start();
             <caption class="text-center fs-3 text-primary">Liste des animaux</caption>
             <thead class="table-dark">
                   <tr>
-                      <th width="10%">Id</th>
+                      <th width="10%">N°</th>
                       <th width="50%">Nom</th>
                       <th width="20%"></th>
                       <th width="20%"></th>
@@ -73,10 +73,14 @@ ob_start();
               
                 <tbody>
                     
-                    <?php foreach ($animals as $animal): ?>
+                    <?php 
+                        $cpt2 = 0;
+                        foreach ($animals as $animal): 
+                        $cpt2++;
+                    ?>
                         <tr id="tr<?= $animal->getId() ?>">
                             <td>
-                                <?= $animal->getId() ?>
+                                <?= $cpt2 ?>
                             </td>
                             <td>
                                 <?= $animal->getNom() ?>

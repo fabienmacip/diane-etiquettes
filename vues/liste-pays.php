@@ -69,7 +69,7 @@ ob_start();
             <caption class="text-center fs-3 text-primary">Liste des chasseurs (<?= count($payss) ?>)</caption>
             <thead class="table-dark">
                   <tr>
-                      <th width="6%">Id</th>
+                      <th width="6%">N°</th>
                       <th width="27%">Nom</th>
                       <th width="27%">Pr&eacute;nom</th>
                       <th width="20%"></th>
@@ -79,10 +79,14 @@ ob_start();
               
                 <tbody>
                     
-                    <?php foreach ($payss as $pays): ?>
+                    <?php 
+                        $cpt = 0;
+                        foreach ($payss as $pays):
+                        $cpt++;
+                    ?>
                         <tr id="tr<?= $pays->getId() ?>">
                             <td>
-                                <?= $pays->getId() ?>
+                                <?= $cpt ?>
                             </td>
                             <td>
                                 <?= $pays->getNom() ?>
