@@ -1,0 +1,1 @@
+Dans cette appli, copiée de SPY, l'entité PAYS correspond à la table de BDD "Chasseurs".

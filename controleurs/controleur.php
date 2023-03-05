@@ -71,6 +71,74 @@ class Controleur {
     }
 
 
+    // ANIMAL - CRUD
+
+    public function listerAnimal()
+    {
+        $animals = new Animals($this->pdo);
+        $animals = $animals->listerAnimal();
+        require_once('vues/liste-animal.php');
+    }
+
+    public function createAnimal($nom)
+    {
+        $animals = new Animals($this->pdo);
+        $animalToCreate = $animals->createAnimal($nom);
+        $animals = $animals->listerAnimal();
+        require_once('vues/liste-animal.php');
+    }
+
+    public function updateAnimal($id, $nom)
+    {
+        $animals = new Animals($this->pdo);
+        $animalToUpdate = $animals->updateAnimal($id, $nom);
+        $animals = $animals->listerAnimal();
+        require_once('vues/liste-animal.php');
+    }
+
+    public function deleteAnimal($id,$nom)
+    {
+        $animals = new Animals($this->pdo);
+        $animalToDelete = $animals->deleteAnimal($id, $nom);
+        $animals = $animals->listerAnimal();
+        require_once('vues/liste-animal.php');
+    }
+
+// DATE - CRUD
+
+public function listerDate()
+{
+    $dates = new MyDates($this->pdo);
+    $dates = $dates->listerDate();
+    require_once('vues/liste-date.php');
+}
+
+public function createDate($date)
+{
+    $dates = new MyDates($this->pdo);
+    $dateToCreate = $dates->createDate($date);
+    $dates = $dates->listerDate();
+    require_once('vues/liste-date.php');
+}
+
+public function updateDate($id, $date)
+{
+    $dates = new MyDates($this->pdo);
+    $dateToUpdate = $dates->updateDate($id, $date);
+    $dates = $dates->listerDate();
+    require_once('vues/liste-date.php');
+}
+
+public function deleteDate($id,$date)
+{
+    $dates = new MyDates($this->pdo);
+    $dateToDelete = $dates->deleteDate($id, $date);
+    $dates = $dates->listerDate();
+    require_once('vues/liste-date.php');
+}
+
+
+
 // ADMINISTRATEUR - CRUD
 
     public function listerAdministrateurs()

@@ -107,7 +107,7 @@ let pageMission ='';
 //  ##############  MISSION - 2  ###################
 
 
-// ##############  PAYS  ###################
+// ##############  PAYS/CHASSEUR  ###################
 
 // Affiche le formulaire de modification du pays
 function displayUpdatePays(id, nom, prenom){
@@ -130,7 +130,7 @@ function displayUpdatePays(id, nom, prenom){
 
   //let codeAConserver = $(`#tr${id}`);
   let codeAConserver = $('#tr'+id);
-  $('#tr'+id).replaceWith("<tr id='tr"+id+"'><td colspan='4'>" + updateForm + "</td></tr>");
+  $('#tr'+id).replaceWith("<tr id='tr"+id+"'><td colspan='5'>" + updateForm + "</td></tr>");
 
   // On frise tous les autres boutons "Modifier"
   $('.updatePays').prop('disabled',true);
@@ -154,6 +154,94 @@ function confirmeSuppressionPays(id,nom){
   } 
 }
 
+// ##############  ANIMAL  ###################
+
+// Affiche le formulaire de modification de l'animal
+function displayUpdateAnimal(id, nom){
+
+  let updateForm = '<form method="post" action="index.php">' + 
+                '<div class="form-group row my-3">' +
+                '<div class="col-12 col-lg-6 mb-3 mb-lg-0 d-flex align-items-start">' +
+                '<label for="nom"></label><input type="text" maxlength="50" name="nom" value="'+ nom + '" id="nom" placeholder="'+ nom + '" class="form-control">' +
+                '</div>' +
+                '<div class="col-12 col-lg-6 d-flex justify-content-around align-items-start mt-2"><input type="hidden" name="idAnimalToUpdate" id="idAnimalToUpdate" value="' + id + '">' +
+                '<input type="hidden" name="action" id="action" value="updateAnimal">' +
+                '<input type="hidden" name="page" id="page" value="animals">' +
+                '<button type="reset" class="btn btn-primary">Reset</button>' +
+                '<button type="button" id="annuler" class="btn btn-primary">Annuler</button>' +
+                '<button type="submit" class="btn btn-primary">Envoyer</button></div></div>' +
+                '</form>';
+
+  //let codeAConserver = $(`#tr${id}`);
+  let codeAConserver = $('#tr'+id);
+  $('#tr'+id).replaceWith("<tr id='tr"+id+"'><td colspan='4'>" + updateForm + "</td></tr>");
+
+  // On frise tous les autres boutons "Modifier"
+  $('.updateAnimal').prop('disabled',true);
+
+
+  // Si on clique sur ANNULER, on ré-affiche la ligne normale -> codeAConserver
+  $( "#annuler" ).click(function() {
+    $('#tr'+id).replaceWith(codeAConserver);
+    $('.updateAnimal').prop('disabled',false);
+  });
+}
+
+// Confirme suppression d'un Animal
+function confirmeSuppressionAnimal(id,nom){
+  
+  let lien = "index.php?page=animals&action=delete&id=" + id + "&nom="+ nom;
+
+  if(confirm("Supprimer " + nom + " ?")){
+    window.location.href = lien;
+      
+  } 
+}
+
+
+// ##############  DATE  ###################
+
+// Affiche le formulaire de modification de la date
+function displayUpdateDate(id, date){
+
+  let updateForm = '<form method="post" action="index.php">' + 
+                '<div class="form-group row my-3">' +
+                '<div class="col-12 col-lg-6 mb-3 mb-lg-0 d-flex align-items-start">' +
+                '<label for="date"></label><input type="text" maxlength="50" name="date" value="'+ date + '" id="date" placeholder="'+ date + '" class="form-control">' +
+                '</div>' +
+                '<div class="col-12 col-lg-6 d-flex justify-content-around align-items-start mt-2"><input type="hidden" name="idDateToUpdate" id="idDateToUpdate" value="' + id + '">' +
+                '<input type="hidden" name="action" id="action" value="updateDate">' +
+                '<input type="hidden" name="page" id="page" value="dates">' +
+                '<button type="reset" class="btn btn-primary">Reset</button>' +
+                '<button type="button" id="annuler" class="btn btn-primary">Annuler</button>' +
+                '<button type="submit" class="btn btn-primary">Envoyer</button></div></div>' +
+                '</form>';
+
+  //let codeAConserver = $(`#tr${id}`);
+  let codeAConserver = $('#tr'+id);
+  $('#tr'+id).replaceWith("<tr id='tr"+id+"'><td colspan='4'>" + updateForm + "</td></tr>");
+
+  // On frise tous les autres boutons "Modifier"
+  $('.updateDate').prop('disabled',true);
+
+
+  // Si on clique sur ANNULER, on ré-affiche la ligne normale -> codeAConserver
+  $( "#annuler" ).click(function() {
+    $('#tr'+id).replaceWith(codeAConserver);
+    $('.updateDate').prop('disabled',false);
+  });
+}
+
+// Confirme suppression d'une Date
+function confirmeSuppressionDate(id,date){
+  
+  let lien = "index.php?page=dates&action=delete&id=" + id + "&date="+ date;
+
+  if(confirm("Supprimer " + date + " ?")){
+    window.location.href = lien;
+      
+  } 
+}
 
 
 // ####################  ADMINISTRATEUR ####################

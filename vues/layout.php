@@ -56,6 +56,8 @@
 
 
                 <li class="nav-item"><a href="index.php?page=payss" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="index.php?page=animals" class="nav-link">Animaux</a></li>
+                <li class="nav-item"><a href="index.php?page=dates" class="nav-link">Dates</a></li>
                 
                 <?php 
                 if(!isset($_SESSION['admin']) || $_SESSION['admin'] !== 1) { ?>
