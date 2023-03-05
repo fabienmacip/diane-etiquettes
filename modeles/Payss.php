@@ -8,7 +8,7 @@ class Payss
     public function listerPays()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT * FROM chasseurs');
+            $stmt = $this->pdo->query('SELECT * FROM chasseurs ORDER BY nom, prenom');
         }
         $payss = [];
         while ($pays = $stmt->fetchObject('Pays', [$this->pdo])) {

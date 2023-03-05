@@ -8,7 +8,7 @@ class Animals
     public function listerAnimal()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT * FROM animaux');
+            $stmt = $this->pdo->query('SELECT * FROM animaux ORDER BY nom');
         }
         $animals = [];
         while ($animal = $stmt->fetchObject('Animal', [$this->pdo])) {

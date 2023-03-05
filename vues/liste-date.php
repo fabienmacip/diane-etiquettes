@@ -29,9 +29,9 @@ ob_start();
         }
     ?>
 
-    <div class="mt-2">
+<!--     <div class="mt-2">
         <a href="#form-create-date" class="add-link">Ajouter une date</a>
-    </div>
+    </div> -->
 
         <!-- ######################## DEBUT FORM AJOUT DATE #################### -->
         

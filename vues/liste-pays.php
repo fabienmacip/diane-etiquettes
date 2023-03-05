@@ -29,8 +29,11 @@ ob_start();
         }
     ?>
 
-    <div class="mt-2">
+<!--     <div class="mt-2">
         <a href="#form-create-pays" class="add-link">Ajouter un chasseur</a>
+    </div> -->
+    <div class="confidentiel my-5">
+      Pour des raisons de confidentialit&eacute;, vous devez être connecté pour voir la liste des chasseurs.
     </div>
 
         <!-- ######################## DEBUT FORM AJOUT PAYS #################### -->
@@ -60,7 +63,7 @@ ob_start();
         <!-- ******************** FIN FORM AJOUT PAYS************************* -->
 
 
-    <div class="table-responsive">
+    <div class="table-responsive" id="tableau-chasseurs">
         
         <table class="table table-striped table-bordered table-sm caption-top table-responsive-lg text-center">
             <caption class="text-center fs-3 text-primary">Liste des chasseurs (<?= count($payss) ?>)</caption>

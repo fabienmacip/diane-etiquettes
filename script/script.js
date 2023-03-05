@@ -87,12 +87,23 @@ let pageMission ='';
 
       $('.add-link').hide();
 
+      $('#tableau-chasseurs').hide();
+      $('#printbutton').hide();
+      $('#tableEtiquettes').hide();
+      $('.confidentiel').show();
+
       // Formulaires de création ayant l'icône PLUS
 /*       $('#pre-form-create-mission').hide();
       $('#pre-form-create-personne').hide();
       $('#pre-form-create-planque').hide(); */
     } else {
       $('form').show();
+      
+      $('#tableau-chasseurs').show();
+      $('#printbutton').show();
+      $('#tableEtiquettes').show();
+      $('.confidentiel').hide();
+
       /* $('button').show(); */
       $('button').prop('disabled',false);
       $('#les-admins #tr1 [type=button]').prop('disabled',true).css('background-color','grey').css('border-color','grey');

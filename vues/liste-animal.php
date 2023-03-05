@@ -29,9 +29,9 @@ ob_start();
         }
     ?>
 
-    <div class="mt-2">
+<!--     <div class="mt-2">
         <a href="#form-create-animal" class="add-link">Ajouter un animal</a>
-    </div>
+    </div> -->
 
         <!-- ######################## DEBUT FORM AJOUT ANIMAL #################### -->
         

@@ -37,7 +37,7 @@
 <input type="hidden" id=isAdmin value="<?= $isAdmin ?>">
 
 <header>
-    <h1 class="text-center my-2">Spy Manager</h1>
+    <h1 class="text-center my-2">DIANE LESPIGNAISE - Etiquettes</h1>
 </header>
 <section>
     <nav class="navbar navbar-light bg-light navbar-expand-lg" style="--bs-scroll-height: 10rem;">
@@ -80,7 +80,8 @@
 </section>
 </main>
 <footer class="fw-light fst-italic fs-6 text-center mt-4">
-    <p>Spy - Tous droits réservés</p>
+    <p>Diane Lespignanaise - Tous droits réservés</p>
+    <p>Webmaster - <a href="mailto:fabien.macip@gmail.com">fabien.macip@gmail.com</a></p>
 </footer>
 
 <!-- ADDED -->

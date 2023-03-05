@@ -29,7 +29,8 @@ class Controleur {
         $messageConnexion = "";
         if($admin->verifConnexion($mail,$password)) {
             $_SESSION['admin'] = 1;
-            $this->afficherMissions();
+            /* $this->afficherMissions(); */
+            $this->accueil();
         } else {
             $_SESSION['admin'] = 0;
             $messageConnexion = "Identifiant ou mot de passe erroné(s).";
