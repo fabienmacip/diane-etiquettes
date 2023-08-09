@@ -56,13 +56,15 @@ ob_start();
                   <?= $diane ?>
                   <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
                   <div class='et-animal'>LIEVRE</div>
-                  <div class='et-date police-blanche'>X</div>
+                  <div class='et-date'>2023</div>
+                  <!-- <div class='et-date police-blanche'>X</div> -->
                 </td>
                 <td>
                   <?= $diane ?>
                   <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
                   <div class='et-animal'>LIEVRE</div>
-                  <div class='et-date police-blanche'>X</div>
+                  <div class='et-date'>2023</div>
+                  <!-- <div class='et-date police-blanche'>X</div> -->
                 </td>
               </tr>
 
