@@ -28,17 +28,59 @@ ob_start();
       <!-- Rappel : pays = chasseur 
            D'abord, on n'affiche que les LIEVRES
       -->
-      <?php
-      $cpt = 0;
-      foreach ($payss as $pays): 
-      ?>
+      <?php foreach ($payss as $pays): ?>
         <?php
            foreach ($animals as $animal): 
         
-            // LIEVRE
-            if($animal->getNom() === "LIEVRE") {
+            // PERDREAU
+            if($animal->getNom() !== "LIEVRE") {
+              $cpt = 0;
+              foreach ($dates as $date): 
               $cpt++;
-              $cpt++;
+              ?>
+              
+              <tr class='tr-perdreau'>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'><?= $animal->getNom() ?></div>
+                  <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                </td>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'><?= $animal->getNom() ?></div>
+                  <div class='et-date <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                </td>
+              </tr>
+
+              <?php endforeach; 
+              while($cpt < 4) {
+                  /* Remplissage de lignes blanches pour imprimer les étiquettes PERDREAU 
+                     par nombre pair, afin d'avoir toutes celles d'un chasseur sur la même page */
+                  ?>
+                  
+                     <tr class='tr-perdreau'>
+                        <td>
+                          <?= $dianeBlanc ?>
+                          <div class='et-nom et-blanc'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                          <div class='et-animal et-blanc'><?= $animal->getNom() ?></div>
+                          <div class='et-date  et-blanc <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                        </td>
+                        <td>
+                          <?= $dianeBlanc ?>
+                          <div class='et-nom et-blanc'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                          <div class='et-animal et-blanc'><?= $animal->getNom() ?></div>
+                          <div class='et-date  et-blanc <?= $animal->getPolice() ?>'><?= $date->getDateLong() ?></div>
+                        </td>
+                     </tr>
+                  
+                  <?php
+                  $cpt++;
+              }
+              // LIEVRE
+              } elseif($animal->getNom() === "LIEVRE") {
+
               for($i = 0 ; $i < 2 ; $i++) { ?>
               <tr class='tr-lievre'>
                 <td>
@@ -63,35 +105,8 @@ ob_start();
 
             
           <?php endforeach; ?>
-      <?php endforeach;
-      
-          while($cpt % 8 != 0){
-              
-              
-              for($i = 0 ; $i < 2 ; $i++) { 
-              $cpt++; ?>
-              <tr class='tr-lievre'>
-                <td>
-                  <?= $diane ?>
-                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
-                  <div class='et-animal'>LIEVRE</div>
-                  <div class='et-date'>2023</div>
-                </td>
-                <td>
-                  <?= $diane ?>
-                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
-                  <div class='et-animal'>LIEVRE</div>
-                  <div class='et-date'>2023</div>
-                </td>
-              </tr>
+      <?php endforeach; ?>
 
-            <?php
-               }// end for
-          }// end while
-      ?>
-
-      
-      
       <!-- Rappel : pays = chasseur 
            Puis, on n'affiche que les PERDREAUX
       -->
@@ -145,9 +160,28 @@ ob_start();
                   <?php
                   $cpt++;
               }
-              
-              } // END if($animal->getNom() !== "LIEVRE")
+              // LIEVRE
+              } elseif($animal->getNom() === "LIEVRE") {
 
+              for($i = 0 ; $i < 2 ; $i++) { ?>
+              <tr class='tr-lievre'>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'>LIEVRE</div>
+                  <div class='et-date'>2023</div>
+                </td>
+                <td>
+                  <?= $diane ?>
+                  <div class='et-nom'><?= $pays->getNom() ?> <?= $pays->getPrenom() ?></div>
+                  <div class='et-animal'>LIEVRE</div>
+                  <div class='et-date'>2023</div>
+                </td>
+              </tr>
+
+            <?php
+               }// end for
+              } // end if
              ?>
           
 

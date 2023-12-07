@@ -127,6 +127,10 @@ br{
     line-height: 0.6cm;
   }
 
+  .et-blanc{
+      opacity: 0;
+  }
+
 @media print {
 
   *{
